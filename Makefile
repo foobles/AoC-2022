@@ -25,7 +25,7 @@ ADF = $(BIN_DIR)/$(ADF_VOLUME).adf
 INCLUDE_DIR = $(AMIGA_NDK)/Include_I
 LINK_LIB_DIR = $(AMIGA_NDK)/lib
 
-LDFLAGS = -o $(BIN_DIR)/$* -bamigahunk -x -Bstatic -nostdlib -Z -mrel -L$(LINK_LIB_DIR) -lamiga
+LDFLAGS = -o $(BIN_DIR)/$* -bamigahunk -x -Bstatic -nostdlib -Z -mrel -L$(LINK_LIB_DIR) -lsmall
 ASFLAGS = -o $(OBJ_DIR)/$*.o -chklabels -no-opt -m68000 -Fhunk -kick1hunks -nosym -I$(INCLUDE_DIR)
 
 
