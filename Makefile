@@ -2,7 +2,7 @@
 # variable AMIGA_NDK must be defined to find amiga.lib and include files.
 
 # update days manually here (must correspond to day#.asm files)
-DAYS = day1
+DAYS = day1 day2
 # if more utility modules are added, add them here
 UTIL_SOURCES = util.asm
 
@@ -20,7 +20,7 @@ SOURCES = $(addsuffix .asm,$(DAYS))
 OBJECTS = $(SOURCES:%.asm=$(OBJ_DIR)/%.o)
 
 ADF_VOLUME = aoc-2022
-ADF = $(BIN_DIR)/$(ADF_VOLUME).adf
+ADF = $(ADF_VOLUME).adf
 
 INCLUDE_DIR = $(AMIGA_NDK)/Include_I
 LINK_LIB_DIR = $(AMIGA_NDK)/lib
@@ -36,6 +36,7 @@ packadf: $(ADF)
 clean:
 	del $(OBJ_DIR) /S /Q
 	del $(BIN_DIR) /S /Q
+	del $(ADF) /Q
 
 
 $(BIN_DIR) $(OBJ_DIR): ; -mkdir $(subst /,\,$@)
